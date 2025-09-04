@@ -1,4 +1,4 @@
-package com.edgarberlinck.app.util;
+package com.edgarberlinck.app.http;
 
 import java.io.OutputStream;
 import java.io.IOException;
@@ -33,13 +33,12 @@ public class HttpResponseBuilder {
 
     public void write(OutputStream out) throws IOException {
         String headers = "HTTP/1.1 " + statusCode + " " + statusMessage + "\r\n" +
-                         "Content-Type: " + contentType + "; charset=UTF-8\r\n" +
-                         "Content-Length: " + body.length + "\r\n" +
-                         "\r\n";
+                "Content-Type: " + contentType + "; charset=UTF-8\r\n" +
+                "Content-Length: " + body.length + "\r\n" +
+                "\r\n";
 
         out.write(headers.getBytes(StandardCharsets.UTF_8));
         out.write(body);
         out.flush();
     }
 }
-

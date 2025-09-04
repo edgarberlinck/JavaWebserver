@@ -1,4 +1,4 @@
-package com.edgarberlinck.app.util;
+package com.edgarberlinck.app.http;
 
 import java.util.HashMap;
 import java.util.Map;
